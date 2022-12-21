@@ -4,13 +4,12 @@
 public class Player {
 
     // applies to subclasses Human and Computer; implement later
-    // maybe implement ActionListener with this class instead (button pressed applies to player)
 
     private String name; 
     private String symbol; 
 
     /**
-     * Constructs a Player with a name and symbol (MUST be different than the other player's!)
+     * Constructs a Player with a name and symbol
      * @param name
      * @param symbol
      */

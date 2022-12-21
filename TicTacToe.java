@@ -18,19 +18,10 @@ public class TicTacToe implements ActionListener, KeyListener {
     JButton button; // last button pressed
     JFrame frame = new JFrame("Tic Tac Toe!");
 
-    JButton b1 = new JButton();
-    JButton b2 = new JButton();
-    JButton b3 = new JButton();
-    JButton b4 = new JButton();
-    JButton b5 = new JButton();
-    JButton b6 = new JButton();
-    JButton b7 = new JButton();
-    JButton b8 = new JButton();
-    JButton b9 = new JButton(); 
+    public JButton buttons[][] = {{new JButton(), new JButton(), new JButton()},{new JButton(), new JButton(), new JButton()},{new JButton(), new JButton(), new JButton()}};
+    // all buttons to be displayed on the board
 
-    public JButton buttons[][] = {{b1,b2,b3},{b4,b5,b6},{b7,b8,b9}};
-
-    JOptionPane p = new JOptionPane();
+    JOptionPane p = new JOptionPane(); // used to display pop up messages
 
     /* Variables to be implemented with the AI portion later: 
     public int[][] endStates={{1,2,3},{3,2,1},{4,5,6},{6,5,4},{7,8,9},{9,8,7},{1,5,9},{9,5,1},{3,5,7},{7,5,3},{1,4,7},{7,4,1},{3,6,9},{9,6,3}};
@@ -42,7 +33,7 @@ public class TicTacToe implements ActionListener, KeyListener {
 /*
  * Sets up the general game before starting turns
  */
-    public void setUp() { // style this up?
+    public void setUp() { 
         
         // initialize UI
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -67,7 +58,7 @@ public class TicTacToe implements ActionListener, KeyListener {
     public void initializePlayers() {
         p1 = new Player(JOptionPane.showInputDialog(p, "Enter the name of Player 1: "), "X");
         p2 = new Player(JOptionPane.showInputDialog(p, "Enter the name of Player 2: "), "O");
-    }   // what if Cancel is chosen? Or X?
+    } 
 
     /**
      * Marks button pressed and checks if the game has ended; implemented from ActionListener
@@ -192,7 +183,7 @@ public class TicTacToe implements ActionListener, KeyListener {
      * Checks if at least one combo in a category (horizontal, vertical, diagonal) has reached 3
      * @param xCount
      * @param oCount
-     * @return
+     * @return if either reached 3
      */
     public boolean checkWinHelper(int xCount, int oCount) {
         return (xCount == 3 || oCount == 3);
@@ -200,7 +191,7 @@ public class TicTacToe implements ActionListener, KeyListener {
 
     /**
      * Returns the current player
-     * @return
+     * @return player
      */
     public Player getPlayer() {
         if (numTurns%2==0) {
