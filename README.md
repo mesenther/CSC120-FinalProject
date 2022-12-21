@@ -1,4 +1,4 @@
-# CSC120-FinalProject
+# CSC120-FinalProject: Tic Tac Toe
 
 For my final project, I made a 2 player Tic-Tac-Toe game with user interface. 
 
